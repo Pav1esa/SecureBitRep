@@ -42,3 +42,32 @@ body {
     nav a:hover {
         background-color: rgba(255, 255, 255, 0.1);
     }
+    .container {
+        margin: 20px;
+        padding: 20px;
+        background: linear-gradient(180deg, #fff, #ecf0f1);
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        transition: box-shadow 0.3s ease;
+    }
+
+    h2 {
+        color: #333;
+    }
+
+    p {
+        color: #555;
+        font-size: 20px;
+    }
+    
+    .custom-button {
+        background: linear-gradient(45deg, #3498db, #2c3e50);
+        color: white;
+        padding: 15px 30px;
+        font-size: 24px;
+        border: 2px solid white;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: background 0.3s ease, box-shadow 0.3s ease;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    }
