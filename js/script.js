@@ -10,6 +10,17 @@ let balance = 0;
             document.getElementById("userBalance").innerText = balance + ' ETH';
         }
     }
+
+    // Function to generate random address
+    function generateRandomAddress() {
+        const characters = '0123456789ABCDEF';
+        let address = '0x';
+        for (let i = 0; i < 40; i++) {
+            address += characters[Math.floor(Math.random() * characters.length)];
+        }
+        return address;
+    }
+    
     // Function to show content based on menu selection
     function showContent(option) {
     document.getElementById("content").style.display = "none";
