@@ -114,3 +114,13 @@ function closeConfirmation() {
     // Закрити стилізоване підтвердження
     document.getElementById("confirmationModal").style.display = "none";
 }
+   // Функція для відображення історії транзакцій
+    function displayTransactionHistory() {
+        const transactionList = document.getElementById("transactionList");
+        transactionList.innerHTML = "";
+        transactions.forEach(transaction => {
+            const listItem = document.createElement("li");
+            listItem.innerHTML = `<strong>From:</strong> ${transaction.sender}, <strong>To:</strong> ${transaction.recipient}, <strong>Amount:</strong> ${transaction.amount} ETH, <strong>Hash:</strong> ${transaction.hash}`;
+            transactionList.appendChild(listItem);
+        });
+    }
