@@ -55,3 +55,29 @@ function showSuccessMessage() {
         successMessage.style.display = "none";
     }, 5000); // 5000 мілісекунд (5 секунд)
 }
+  // Function to send funds
+    function sendFunds() {
+        const sendAmount = parseFloat(document.getElementById("sendAmount").value);
+        const recipientAddress = document.getElementById("recipientAddress").value;
+        if (!isNaN(sendAmount) && sendAmount > 0 && sendAmount <= balance && recipientAddress) {
+            // Виконати транзакцію
+            balance -= sendAmount;
+
+            // Генерувати унікальний хеш для транзакції (простий приклад, насправді потрібно використовувати безпечні методи)
+            const transactionHash = Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
+
+            // Записати транзакцію в історію
+            const transaction = {
+                sender: receiveAddress,
+                recipient: recipientAddress,
+                amount: sendAmount,
+                hash: transactionHash
+            };
+
+            transactions.push(transaction);
+            displayTransactionHistory();
+            generateRandomBalance();
+        } else {
+            alert("Invalid amount, insufficient balance, or missing recipient address.");
+        }
+    }
