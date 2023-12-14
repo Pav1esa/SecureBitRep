@@ -124,3 +124,14 @@ function closeConfirmation() {
             transactionList.appendChild(listItem);
         });
     }
+  // Function to generate QR code
+    function generateQRCode() {
+        if (!qrCodeGenerated) {
+            const qrcode = new QRCode(document.getElementById("qrcode"), {
+                text: receiveAddress,
+                width: 128,
+                height: 128
+            });
+            qrCodeGenerated = true;
+        }
+    }
