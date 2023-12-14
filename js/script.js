@@ -20,7 +20,7 @@ let balance = 0;
         }
         return address;
     }
-    
+
     // Function to show content based on menu selection
     function showContent(option) {
     document.getElementById("content").style.display = "none";
@@ -92,3 +92,25 @@ function showSuccessMessage() {
             alert("Invalid amount, insufficient balance, or missing recipient address.");
         }
     }
+      // Function to confirm sending funds
+
+ function confirmSend() {
+    // Показати стилізоване підтвердження
+    document.getElementById("confirmationModal").style.display = "block";
+}
+
+function sendConfirmedFunds() {
+     // Викликати вашу функцію sendFunds() тут
+    sendFunds();
+
+    // Відображення повідомлення про успішну транзакцію
+    showSuccessMessage();
+
+    // Закрити стилізоване підтвердження
+    closeConfirmation();
+}
+
+function closeConfirmation() {
+    // Закрити стилізоване підтвердження
+    document.getElementById("confirmationModal").style.display = "none";
+}
