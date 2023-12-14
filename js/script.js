@@ -66,7 +66,8 @@ function showSuccessMessage() {
         successMessage.style.display = "none";
     }, 5000); // 5000 мілісекунд (5 секунд)
 }
-  // Function to send funds
+
+    // Function to send funds
     function sendFunds() {
         const sendAmount = parseFloat(document.getElementById("sendAmount").value);
         const recipientAddress = document.getElementById("recipientAddress").value;
@@ -92,7 +93,7 @@ function showSuccessMessage() {
             alert("Invalid amount, insufficient balance, or missing recipient address.");
         }
     }
-      // Function to confirm sending funds
+    // Function to confirm sending funds
 
  function confirmSend() {
     // Показати стилізоване підтвердження
@@ -114,7 +115,10 @@ function closeConfirmation() {
     // Закрити стилізоване підтвердження
     document.getElementById("confirmationModal").style.display = "none";
 }
-   // Функція для відображення історії транзакцій
+
+
+
+    // Функція для відображення історії транзакцій
     function displayTransactionHistory() {
         const transactionList = document.getElementById("transactionList");
         transactionList.innerHTML = "";
@@ -124,7 +128,8 @@ function closeConfirmation() {
             transactionList.appendChild(listItem);
         });
     }
-  // Function to generate QR code
+
+    // Function to generate QR code
     function generateQRCode() {
         if (!qrCodeGenerated) {
             const qrcode = new QRCode(document.getElementById("qrcode"), {
@@ -135,3 +140,24 @@ function closeConfirmation() {
             qrCodeGenerated = true;
         }
     }
+     // Function to show QR code modal
+    function showQRCode() {
+        // Generate the QR code
+        generateQRCode();
+
+        // Display the QR code modal
+        document.getElementById("qrCodeModal").style.display = "block";
+    }
+
+    // Function to close QR code modal
+    function closeQRCodeModal() {
+        // Close the QR code modal
+        document.getElementById("qrCodeModal").style.display = "none";
+    }
+    // Close the modal if the user clicks outside of it
+    window.onclick = function(event) {
+        var modal = document.getElementById('qrCodeModal');
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    };
