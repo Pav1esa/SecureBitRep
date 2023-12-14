@@ -42,3 +42,16 @@ let balance = 0;
             document.getElementById("content").style.display = "block";
     }
 }
+// Функція для відображення повідомлення про успішну транзакцію
+function showSuccessMessage() {
+    // Знаходимо елемент successMessage
+    var successMessage = document.getElementById("successMessage");
+
+    // Змінюємо стиль display на "flex" (показуємо блок)
+    successMessage.style.display = "flex";
+
+    // Прибираємо повідомлення через 5 секунд
+    setTimeout(function() {
+        successMessage.style.display = "none";
+    }, 5000); // 5000 мілісекунд (5 секунд)
+}
